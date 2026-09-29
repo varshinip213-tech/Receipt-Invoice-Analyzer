@@ -12,15 +12,16 @@ st.set_page_config(
 )
 
 st.title("🧾 Receipt/Invoice Analyzer")
-st.write("Upload a image and get insights using Gemini 3.8 Flash.")
+st.write("Upload a image and get insights using Gemini 3.5-Flash-lite")
 
 # -----------------------------
 # Gemini API Configuration
 # -----------------------------
-GOOGLE_API_KEY = "AQ.Ab8RN6K1doV0nUz0QJcHhTmgCFHd6SmmM9Y54OTsGiEVwzh2FQ"
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+
 genai.configure(api_key=GOOGLE_API_KEY)
 
-model = genai.GenerativeModel("gemini-3.8-flash")
+model = genai.GenerativeModel("gemini-3.5-flash-lite")
 
 # -----------------------------
 # Image Upload
